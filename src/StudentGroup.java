@@ -48,18 +48,24 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void setStudent(Student student, int index) {
-		
+		if(students==null||index<0||index>students.length)
+		throw new IllegalArgumentException("exception occured");
 		this.students[index]=student;
 	}
 
 	@Override
 	public void addFirst(Student student) {
+		if(students==null)
+ 		throw new IllegalArgumentException("exception occured");
 		this.addFirst(student);
 	}
 
 	@Override
 	public void addLast(Student student) {
-		// Add your implementation here
+		
+		
+		this.addLast(student);
+
 	}
 
 	@Override
@@ -75,6 +81,7 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
+		
 	}
 
 	@Override
