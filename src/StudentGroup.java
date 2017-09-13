@@ -62,7 +62,8 @@ public class StudentGroup implements StudentArrayOperation {
 
 	@Override
 	public void addLast(Student student) {
-		
+		if(student==null)
+		throw new IllegalArgumentException("exception occured");
 		
 		this.addLast(student);
 
@@ -81,7 +82,16 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void remove(Student student) {
 		// Add your implementation here
-		
+                for(int i=0;i<students.length;i++)
+ 		{
+			if(students[i]==student)
+			{
+				for(int j=1;j<=students.length-i;j++)
+				{
+					students[i]=students[i+1];
+				}
+			}
+		}		
 	}
 
 	@Override
